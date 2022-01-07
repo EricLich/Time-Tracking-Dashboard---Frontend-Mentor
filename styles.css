@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--blue: hsl(246, 80%, 60%);
+	--light-red-work: hsl(15, 100%, 70%);
+	--soft-blue: hsl(195, 74%, 62%);
+	--light-red-study: hsl(348, 100%, 68%);
+	--lime-green: hsl(145, 58%, 55%);
+	--violet: hsl(264, 64%, 52%);
+	--soft-orange: hsl(43, 84%, 65%);
+	--dark-blue: hsl(235, 46%, 20%);
+	--very-dark-blue: hsl(226, 43%, 10%);
+	--desaturated-blue: hsl(235, 45%, 61%);
+	--pale-blue: hsl(236, 100%, 87%);
+}
+
+body {
+	font-family: "Rubik", sans-serif;
+	width: 100%;
+	height: auto;
+	background-color: var(--very-dark-blue);
+}
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.cards-grid {
+	margin-top: 70px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+}
+
+.card-user {
+	display: flex;
+	flex-direction: column;
+	border-radius: 20px;
+	width: 100%;
+	position: relative;
+}
+
+.profile-section {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: var(--blue);
+	border-radius: 20px;
+	padding: 30px 20px;
+	position: relative;
+	z-index: 1;
+}
+
+.circle {
+	border: 3px solid white;
+	width: 65px;
+	height: 65px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.circle img {
+	width: 100%;
+	margin-right: 10px;
+}
+
+.profile-section .profile-texts {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin-left: 15px;
+}
+
+.profile-texts h1 {
+	color: #ffffff;
+	font-size: 24px;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+.profile-texts p {
+	color: var(--pale-blue);
+	font-size: 14px;
+	margin-bottom: 5px;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+
+.time-section {
+	position: relative;
+	top: -7%;
+	padding: 40px 25px 27px 25px;
+	background-color: var(--dark-blue);
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.time-section a {
+	text-decoration: none;
+	color: var(--desaturated-blue);
+	font-size: 18px;
+}
+
+.time-section a:nth-child(2) {
+	color: white;
+}
+
+.card {
+}
