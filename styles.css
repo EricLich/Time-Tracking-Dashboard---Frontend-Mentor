@@ -20,41 +20,54 @@
 }
 
 body {
+	overflow: scroll;
 	font-family: "Rubik", sans-serif;
 	width: 100%;
-	height: auto;
+	height: 100vh;
 	background-color: var(--very-dark-blue);
+}
+@media (min-width: 768px) {
+	body {
+		display: grid;
+		place-content: center;
+	}
 }
 
 .container {
 	width: 90%;
 	margin: 0 auto;
+	display: grid;
+	place-items: center;
 }
 
 .cards-grid {
 	margin-top: 70px;
 	width: 100%;
+	height: 100%;
 	display: grid;
+	gap: 20px;
 	grid-template-columns: repeat(1, 1fr);
 }
 
 .card-user {
-	display: flex;
-	flex-direction: column;
 	border-radius: 20px;
 	width: 100%;
 	position: relative;
+	height: 220px;
 }
 
 .profile-section {
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-start;
 	align-items: center;
 	background-color: var(--blue);
 	border-radius: 20px;
-	padding: 30px 20px;
+	padding: 30px 30px;
 	position: relative;
+	top: 0;
+	height: 70%;
 	z-index: 1;
+	box-shadow: 0 5px 3px rgba(0, 0, 0, 0.226);
 }
 
 .circle {
@@ -71,7 +84,6 @@ body {
 }
 
 .profile-section .profile-texts {
-	flex: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -94,8 +106,9 @@ body {
 }
 
 .time-section {
-	position: relative;
-	top: -7%;
+	position: absolute;
+	z-index: -1;
+	bottom: 0;
 	padding: 40px 25px 27px 25px;
 	background-color: var(--dark-blue);
 	border-bottom-left-radius: 15px;
@@ -115,5 +128,185 @@ body {
 	color: white;
 }
 
+/* CARD */
+
 .card {
+	/* margin-top: 15px; */
+	width: 100%;
+	height: 200px;
+	position: relative;
+	overflow: hidden;
+}
+
+.card-image {
+	width: 100%;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
+	position: absolute;
+}
+
+.work {
+	width: 100%;
+	height: 30%;
+	background-color: var(--light-red-work);
+}
+
+.play {
+	width: 100%;
+	height: 30%;
+	background-color: var(--soft-blue);
+}
+
+.study {
+	width: 100%;
+	height: 30%;
+	background-color: var(--light-red-study);
+}
+
+.exercise {
+	width: 100%;
+	height: 30%;
+	background-color: var(--lime-green);
+}
+
+.social {
+	width: 100%;
+	height: 30%;
+	background-color: var(--violet);
+}
+
+.self-care {
+	width: 100%;
+	height: 30%;
+	background-color: var(--soft-orange);
+}
+
+.card-image img {
+	position: absolute;
+	width: 75px;
+	height: 75px;
+	left: 65%;
+}
+
+.card {
+	border-radius: 20px;
+	position: relative;
+}
+
+.card .card-data {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: space-between;
+	background-color: var(--dark-blue);
+	width: 100%;
+	border-radius: 20px;
+	padding: 0px 20px;
+	position: absolute;
+	z-index: 1;
+	top: -20%;
+	top: 20%;
+	bottom: 0;
+}
+
+.card-data .card-data-top {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card-data-top h2 {
+	color: white;
+	font-weight: 400;
+	font-size: 20px;
+}
+
+.card-data .card-data-bottom {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 10px;
+}
+
+.card-data-bottom h3 {
+	font-weight: 300;
+	font-size: 30px;
+	color: white;
+	letter-spacing: 1px;
+}
+
+.card-data-bottom p {
+	color: var(--desaturated-blue);
+	font-weight: 400;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+
+@media (min-width: 768px) {
+	.cards-grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.card-user {
+		grid-row-start: 1;
+		grid-row-end: 3;
+	}
+
+	.profile-section {
+		height: 340px;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-left: 0;
+	}
+	.circle {
+		width: 75px;
+		height: 75px;
+	}
+
+	.profile-texts {
+		margin-top: 90px;
+	}
+
+	.profile-texts h1 {
+		font-size: 36px;
+	}
+
+	.time-section {
+		bottom: -122%;
+		height: 170px;
+		z-index: -1;
+		padding: 40px 20px 20px;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+
+	.card {
+		position: relative;
+		bottom: 0;
+	}
+
+	.card-data {
+		height: 100%;
+		transition: ease-in 0.3s;
+	}
+	.card-image {
+	}
+
+	.card-data .card-data-top {
+		font-size: 48px;
+	}
+
+	.card-data:hover {
+		background-color: rgb(53, 68, 153);
+	}
+
+	.time-section a {
+		transition: ease-in 0.3s;
+	}
+
+	.time-section a:hover {
+		color: white;
+	}
 }
